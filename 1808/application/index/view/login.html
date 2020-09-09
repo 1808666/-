@@ -49,6 +49,7 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/layer/layer.js"></script>
 <script>
 		function login() {
 			var username = $('#username').val();
@@ -56,13 +57,13 @@
 			var yanzhengma = $('#yanzhengma').val();
 			
 			if(username == ''){
-				alert('账号不能为空');
+				layer.msg('账号不能为空');
 				return
 			}else if(password == ''){
-				alert('密码不能为空');
+				layer.msg('密码不能为空');
 				return
 			}else if(yanzhengma == ''){
-				alert('验证码不能为空');
+				layer.msg('验证码不能为空');
 				return
 			}
 	        $.ajax({
@@ -78,7 +79,7 @@
 	            	if(data == 1){
 	            		location.href='/index/xiaomi/index';
 	            	}else{
-	            		alert(data);
+	            		layer.msg('验证码不能为空');
 	            	}
 	            }
 	        });
